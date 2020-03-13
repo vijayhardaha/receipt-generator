@@ -59,7 +59,7 @@ $( document ).ready( () => {
 
       let bodyHtml = `<div id="receipt"><div class="address-section"><p>${business}</p><p>${address}</p><p>${location}</p></div><div class="date-section"><p><span class="date">${date}</span><span class="time">${time}</span></p></div><div class="payment-section"><p><strong>PAYMENT TYPE:</strong> ${paymentType}</p></div><div class="items-section"><table class="table"><tr><th>Item</th><th>QTY</th><th>Unit</th><th>Price</th></tr>`;
       items.each( ( i, el ) => {
-        let parent = $( el ).parents( app.itemListElem );
+        let parent = $( el ).parents( ".item-list" );
         let price = $( el ).val();
         price = parseFloat( price ).toFixed( 2 );
         let qty = parent.find( "input[name='qty[]']" ).val();
