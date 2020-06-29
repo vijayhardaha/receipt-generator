@@ -28,7 +28,7 @@
     "express": "^4.17.1",
     "file-saver": "^2.0.2",
     "inputmask": "^5.0.3",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "puppeteer-core": "^2.1.1",
     "tippy.js": "^6.0.3"
   }
