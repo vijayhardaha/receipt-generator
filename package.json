@@ -19,7 +19,7 @@
     "babel-preset-env": "^1.7.0",
     "parcel-bundler": "^1.12.4",
     "puppeteer": "^2.1.1",
-    "sass": "^1.26.2"
+    "sass": "^1.26.10"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -28,8 +28,8 @@
     "express": "^4.17.1",
     "file-saver": "^2.0.2",
     "inputmask": "^5.0.3",
-    "jquery": "^3.5.0",
+    "jquery": "^3.5.1",
     "puppeteer-core": "^2.1.1",
-    "tippy.js": "^6.0.3"
+    "tippy.js": "^6.2.6"
   }
 }
