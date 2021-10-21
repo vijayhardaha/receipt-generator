@@ -1,35 +1,40 @@
 {
   "name": "receipt-generator",
   "version": "1.0.0",
-  "description": "",
-  "main": "api/index.js",
+  "description": "An easy to use online tool to generate receipts.",
   "scripts": {
     "start": "node api/index.js",
     "dev": "parcel index.html",
     "watch": "parcel index.html",
-    "build": "rm -rf .cache && rm -rf dist && parcel build index.html --public-url=https://receipt-generator.now.sh/ --no-source-maps",
-    "deploy": "npm run build && now",
-    "dp": "npm run build && now && now --prod"
+    "build": "rm -rf .parcel-cache && rm -rf dist && parcel build index.html --public-url=./ --no-source-maps",
+    "deploy": "npm run build && vercel",
+    "dp": "npm run build && vercel && vercel --prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vijayhardaha/receipt-generator.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "parcel-bundler": "^1.12.4",
-    "puppeteer": "^2.1.1",
-    "sass": "^1.26.10"
+  "bugs": {
+    "url": "https://github.com/vijayhardaha/receipt-generator/issues"
   },
+  "homepage": "https://github.com/vijayhardaha/receipt-generator#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "chrome-aws-lambda": "^2.1.1",
+    "chrome-aws-lambda": "^10.1.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "file-saver": "^2.0.2",
-    "inputmask": "^5.0.3",
-    "jquery": "^3.5.1",
-    "puppeteer-core": "^2.1.1",
-    "tippy.js": "^6.2.6"
+    "file-saver": "^2.0.5",
+    "inputmask": "^5.0.6",
+    "jquery": "^3.6.0",
+    "puppeteer-core": "^10.4.0",
+    "puppeteer": "^10.4.0",
+    "tippy.js": "^6.3.2"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0",
+    "parcel": "^2.0.0",
+    "sass": "^1.43.2"
   }
 }
