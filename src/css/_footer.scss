@@ -1,0 +1,9 @@
+.site-footer {
+  background: $dark;
+  color: $white;
+  @include font-size($font-size-sm);
+
+  a {
+    color: inherit;
+  }
+}

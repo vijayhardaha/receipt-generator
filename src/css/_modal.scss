@@ -1,0 +1,53 @@
+.rg-modal {
+  @include media-breakpoint-down("lg") {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    display: none;
+    outline: 0;
+
+    &-dialog {
+      position: relative;
+      width: 768px;
+      max-width: 100%;
+      min-height: calc(100% - (0.5rem * 2));
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      pointer-events: none;
+    }
+
+    &-content {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 30px 15px;
+      pointer-events: auto;
+      outline: 0;
+    }
+
+    &-body {
+      position: relative;
+      min-height: 300px;
+    }
+  }
+}
+
+body.rg-modal-open {
+  @include media-breakpoint-down("lg") {
+    overflow: hidden;
+
+    .rg-modal {
+      z-index: 999998;
+      overflow-x: hidden;
+      overflow-y: auto;
+      display: block;
+      background: rgba($black, 0.5);
+    }
+  }
+}

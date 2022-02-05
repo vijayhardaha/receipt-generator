@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "dist/*", "use": "@now/static" },
+    {
+      "src": "/api/index.js",
+      "use": "@vercel/node",
+      "config": { "maxLambdaSize": "40mb" }
+    }
+  ],
+  "routes": [
+    { "src": "/", "dest": "/dist/index.html" },
+    { "src": "/(.*)", "dest": "/dist/$1" },
+    { "src": "/api/", "methods": ["POST"], "dest": "/api/index.js" }
+  ]
+}
