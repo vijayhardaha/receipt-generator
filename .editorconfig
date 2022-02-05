@@ -1,15 +1,24 @@
+# This file is for unifying the coding style for different editors and IDEs
+# editorconfig.org
+
 root = true
 
 [*]
-indent_style = tab
-indent_size = 4
-end_of_line = lf
 charset = utf-8
-trim_trailing_whitespace = true
-insert_final_newline = true
-
-[*.{md,json,yml,toml}]
+end_of_line = lf
+indent_size = 4
+indent_style = tab
 insert_final_newline = false
+trim_trailing_whitespace = true
+
+[*.{css,scss,js,html}]
+trim_trailing_whitespace = false
+indent_size = 2
+
+[*.txt]
+trim_trailing_whitespace = false
+
+[*.{md,json,yml}]
 trim_trailing_whitespace = false
 indent_style = space
 indent_size = 2
