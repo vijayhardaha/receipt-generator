@@ -31,8 +31,7 @@ utils.nl2br = ( str, is_xhtml ) => {
  */
 utils.showError = ( message = "" ) => {
   const el = $( document.body ).find( utils.errorSelector );
-  el.html( message ).addClass( "show" );
-  utils.animate( utils.errorSelector, "bounceIn" );
+  el.html( message ).removeClass( "d-none" );
 };
 
 /**
@@ -40,7 +39,7 @@ utils.showError = ( message = "" ) => {
  */
 utils.hideError = () => {
   const el = $( document.body ).find( utils.errorSelector );
-  el.empty().removeClass( "show" );
+  el.empty().addClass( "d-none" );
 };
 
 /**

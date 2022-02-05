@@ -1,7 +1,7 @@
 {
   "version": 2,
   "builds": [
-    { "src": "dist/*", "use": "@now/static" },
+    { "src": "dist/**", "use": "@vercel/static" },
     {
       "src": "/api/index.js",
       "use": "@vercel/node",
@@ -9,8 +9,20 @@
     }
   ],
   "routes": [
-    { "src": "/", "dest": "/dist/index.html" },
-    { "src": "/(.*)", "dest": "/dist/$1" },
+    {
+      "src": "/(.*).(js.map|js|css|html|png|json|jpg|jpeg|ico|webmanifest)",
+      "dest": "/dist/$1.$2",
+      "headers": {
+        "cache-control": "s-maxage=31536000,immutable"
+      }
+    },
+    {
+      "src": "/",
+      "dest": "/dist/index.html",
+      "headers": {
+        "Cache-Control": "no-cache"
+      }
+    },
     { "src": "/api/", "methods": ["POST"], "dest": "/api/index.js" }
   ]
 }

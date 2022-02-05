@@ -208,16 +208,12 @@ import moment from "moment";
                 modal.open();
               } else {
                 // Show error if response doesn't have success response.
-                utils.showError(
-                  "Sorry, something went wrong, please try later."
-                );
+                utils.showError( "Sorry, something went wrong, please try later." );
               }
             },
             error: () => {
               // Show error.
-              utils.showError(
-                "Sorry, Server has some error, Please come back later."
-              );
+              utils.showError( "Sorry, something went wrong, please try after sometime." );
             },
             complete: () => {
               // Hide Loader.
