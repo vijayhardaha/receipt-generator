@@ -5,7 +5,7 @@
   "scripts": {
     "api": "node api/index.js",
     "dev": "parcel",
-    "prebuild": "npx rimraf dist .parcel-cache .vercel",
+    "clean": "rm -rf dist .parcel-cache",
     "build": "parcel build"
   },
   "source": "index.html",
