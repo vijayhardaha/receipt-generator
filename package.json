@@ -6,7 +6,7 @@
     "api": "node api/index.js",
     "dev": "parcel",
     "clean": "rm -rf dist .parcel-cache",
-    "build": "parcel build"
+    "build": "npm run clean && parcel build --no-source-maps"
   },
   "source": "index.html",
   "repository": {
