@@ -1,9 +1,6 @@
 // jQueru dependency.
 import $ from "jquery";
 
-// Import stylesheet.
-import "../css/style.scss";
-
 // Helpers functions.
 import utils from "./libs/utils";
 import modal from "./libs/modal";
@@ -165,8 +162,6 @@ import download from "./libs/download";
 
           // Generate receipt image raw html.
           const html = app.generateRawHtml( form );
-
-          console.log( process.env.API_URL );
 
           // Setup Ajax call for api call.
           $.ajax( {

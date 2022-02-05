@@ -4,21 +4,32 @@
   "description": "An easy to use online tool to generate receipts.",
   "scripts": {
     "api": "node api/index.js",
-    "dev": "parcel index.html",
-    "prebuild": "npx rimraf dist .parcel-cache",
-    "build": "parcel build index.html --public-url=./ --no-source-maps"
+    "dev": "parcel",
+    "prebuild": "npx rimraf dist .parcel-cache .vercel",
+    "build": "parcel build"
   },
+  "source": "index.html",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vijayhardaha/receipt-generator.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Vijay Hardaha <https://twitter.com/vijayhardaha>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/vijayhardaha/receipt-generator/issues"
   },
   "homepage": "https://github.com/vijayhardaha/receipt-generator#readme",
+  "browserslist": [
+    ">= 0.5%",
+    "last 2 major versions",
+    "Chrome >= 60",
+    "Firefox >= 60",
+    "Firefox ESR",
+    "iOS >= 12",
+    "Safari >= 12",
+    "not Explorer <= 11"
+  ],
   "dependencies": {
     "chrome-aws-lambda": "^9.1.0",
     "cors": "^2.8.5",
@@ -27,7 +38,6 @@
     "puppeteer-core": "^13.1.3"
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^4.0.3",
     "@parcel/transformer-sass": "^2.0.1",
     "@parcel/transformer-webmanifest": "^2.0.1",
     "autoprefixer": "^10.4.0",

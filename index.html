@@ -18,39 +18,41 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://receipt-generator.now.sh/">
+    <meta property="og:url" content="https://receipt-generator.vercel.app">
     <meta property="og:title" content="Receipt Generator">
     <meta property="og:description" content="An easy to use online tool to generate receipts.">
-    <meta property="og:image" content="src/images/thumbnail.jpg">
+    <meta property="og:image" content="./src/images/thumbnail.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="628">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://receipt-generator.now.sh/">
+    <meta property="twitter:url" content="https://receipt-generator.vercel.app">
     <meta property="twitter:title" content="Receipt Generator">
     <meta property="twitter:description" content="An easy to use online tool to generate receipts.">
-    <meta property="twitter:image" content="src/images/thumbnail.jpg">
+    <meta property="twitter:image" content="./src/images/thumbnail.jpg">
 
-    <link rel="apple-touch-icon" sizes="57x57" href="src/icons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="src/icons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="src/icons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="src/icons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="src/icons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="src/icons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="src/icons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="src/icons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="src/icons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="src/icons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="src/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="src/icons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="src/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="./src/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./src/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./src/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./src/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./src/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./src/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./src/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./src/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./src/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./src/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./src/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./src/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./src/icons/favicon-16x16.png">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="src/icons/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="./src/icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <meta name="google-site-verification" content="9T8_EMb6UiUZR6CeIs8Dd6687D-o48lwZEjb6cPPckg" />
 
-    <link href="//fonts.googleapis.com/css?family=Bubblegum+Sans|Proza+Libre:400,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans|Proza+Libre:400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/css/style.scss" />
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100426446-3"></script>
     <script>
@@ -67,37 +69,28 @@
     <div id="loader">
         <div class="loader"></div>
     </div>
-    <!-- #loader starts-->
-    <div id="loader">
-        <!-- .loader starts-->
-        <div class="loader"></div><!-- .loader ends-->
-    </div><!-- #loader ends-->
 
-    <!-- .container starts-->
     <section class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12">
-                <!-- .heading starts-->
-                <h1 class="heading">Receipt Generator</h1><!-- .heading ends-->
+                <h1 class="heading">Receipt Generator</h1>
             </div>
         </div>
 
         <div class="row">
             <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-0">
-                <!-- .receipt-form starts-->
                 <div class="receipt-form">
                     <h2>Enter Receipt Details</h2>
-                    <!-- .view-sample starts-->
-                    <a href="#" class="view-sample">View Sample Receipt</a><!-- .view-sample ends-->
+                    <a href="#" class="view-sample">View Sample Receipt</a>
                     <form class="form-horizontal" action="" method="POST" id="receipt-form" autocomplete="off">
                         <div class="form-group">
                             <div class="col-sm-12">
-                                <input type="text" class="form-control require" name="date" value="" placeholder="Date(DD/MM/YYYY)*" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" inputmode="numeric" data-inputmask-placeholder="DD/MM/YYYY" />
+                                <input type="text" class="form-control require" name="date" value="" placeholder="Date (DD/MM/YYYY)*" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" inputmode="numeric" data-inputmask-placeholder="DD/MM/YYYY" />
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-12">
-                                <input type="text" class="form-control require" name="time" value="" placeholder="Time(HH:MM TT)*" data-inputmask-regex="((1[0-2]|0?[1-9]):([0-5][0-9]) ([AP]M))" />
+                                <input type="text" class="form-control require" name="time" value="" placeholder="Time (HH:MM TT)*" data-inputmask-regex="((1[0-2]|0?[1-9]):([0-5][0-9]) ([AP]M))" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -198,7 +191,7 @@
                             </div>
                         </div>
                     </form>
-                </div><!-- .receipt-form ends-->
+                </div>
             </div>
             <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-0">
                 <div class="md-modal">
@@ -209,7 +202,7 @@
                                 <div class="preview-receipt">
                                     <h2>Sample Receipt</h2>
                                     <div class="preview-box">
-                                        <img class="img-responsive center-block" src="src/images/sample.jpg" />
+                                        <img class="img-responsive center-block" src="./src/images/sample.jpg" />
                                         <div class="form-group">
                                             <button type="button" id="download" class="btn btn-primary btn-block" disabled="disabled"><span class="icon-cloud-download"></span>Download Receipt</button>
                                         </div>
@@ -221,9 +214,9 @@
                 </div>
             </div>
         </div>
-    </section><!-- .container ends-->
+    </section>
 
-    <script type="module" src="src/js/index.js"></script>
+    <script type="module" src="./src/js/index.js"></script>
 </body>
 
 </html>
