@@ -13,15 +13,12 @@
       "src": "/(.*).(js.map|js|css|html|png|json|jpg|jpeg|ico|webmanifest)",
       "dest": "/dist/$1.$2",
       "headers": {
-        "cache-control": "s-maxage=31536000,immutable"
+        "cache-control": "public,max-age=31536000,immutable"
       }
     },
     {
       "src": "/",
-      "dest": "/dist/index.html",
-      "headers": {
-        "Cache-Control": "no-cache"
-      }
+      "dest": "/dist/index.html"
     },
     { "src": "/api/", "methods": ["POST"], "dest": "/api/index.js" }
   ]
