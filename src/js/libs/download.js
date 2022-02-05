@@ -1,6 +1,3 @@
-// Helpers functions.
-import utils from "./utils";
-
 // Dependency for downloading file.
 import { saveAs } from "file-saver";
 
@@ -8,7 +5,7 @@ import { saveAs } from "file-saver";
 const download = {};
 
 /**
- * Convert base64 to Blob
+ * Convert base64 to Blob.
  * @param {string} uri base64 string.
  * @return {Blob}
  */
@@ -25,16 +22,17 @@ download.base64ToBlob = ( uri ) => {
 };
 
 /**
- * Download base64 image
+ * Download base64 image.
  * @param {string} uri base64 string.
  */
 download.save = ( uri = null ) => {
-  if ( utils.isEmpty( uri ) ) {
+  if ( uri === "" || uri === null || typeof uri === "undefined" ) {
     return false;
   }
+  const date = new Date();
   const blob = download.base64ToBlob( uri );
-  const time = utils.getTime();
-  file = `recipt-${time}.png`;
+  const time = date.getTime();
+  const file = `recipt-${time}.png`;
   saveAs( blob, file );
 };
 

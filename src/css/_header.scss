@@ -1,0 +1,10 @@
+.site-header {
+  color: $white;
+  background: $primary;
+
+  .site-title {
+    letter-spacing: 1px;
+    color: inherit;
+    @include font-size(36px);
+  }
+}

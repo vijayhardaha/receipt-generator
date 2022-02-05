@@ -11,10 +11,6 @@ indent_style = tab
 insert_final_newline = false
 trim_trailing_whitespace = true
 
-[*.{css,scss,js,html}]
-trim_trailing_whitespace = false
-indent_size = 2
-
 [*.txt]
 trim_trailing_whitespace = false
 

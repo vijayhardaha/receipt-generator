@@ -1,0 +1,29 @@
+body {
+  background: linear-gradient(90deg, rgba($gray-50, 1) 0%, rgba($gray-300, 0.5) 100%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+}
+
+.btn {
+  box-shadow: none !important;
+
+  .loader {
+    vertical-align: middle;
+  }
+}
