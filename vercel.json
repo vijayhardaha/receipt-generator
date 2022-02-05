@@ -4,7 +4,7 @@
     { "src": "dist/*", "use": "@now/static" },
     {
       "src": "/api/index.js",
-      "use": "@now/node",
+      "use": "@vercel/node",
       "config": { "maxLambdaSize": "40mb" }
     }
   ],
