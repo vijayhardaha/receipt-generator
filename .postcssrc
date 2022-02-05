@@ -1,0 +1,10 @@
+{
+  "plugins": {
+    "autoprefixer": {
+      "grid": false
+    },
+    "@fullhuman/postcss-purgecss": {
+      content: [ './**/*.html' ]
+    }
+  }
+}
