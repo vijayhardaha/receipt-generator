@@ -31,7 +31,7 @@ app.post( "*", async (req, res) => {
 		});
 	} catch (error) {
 		const message = error.error || "Server encountered an error.";
-		res.status(200).json({ success: false, error: message });
+		res.status(200).json({ success: false, error: message, errorData: error });
 	}
 });
 
