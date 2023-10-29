@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Primary Meta Tags -->
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<base href="" />
+
+	<!-- Page Title and Description -->
+	<title>Receipt Generator</title>
+	<meta name="title" content="Receipt Generator" />
+	<meta name="description" content="An easy-to-use online tool for generating receipts." />
+
+	<!-- Keywords for SEO -->
+	<meta name="keywords"
+		content="receipt maker, receipt generator, receipt template, taxi receipt, coffee receipt, parking receipt, restaurant receipt" />
+
+	<!-- Robots Tag for Search Engine Crawlers -->
+	<meta name="robots" content="index, follow" />
+
+	<!-- Language and Author Information -->
+	<meta name="language" content="English" />
+	<meta name="author" content="Vijay Hardaha" />
+
+	<!-- Favicon -->
+	<link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+
+	<!-- Google Search Console Verification -->
+	<meta name="google-site-verification" content="9T8_EMb6UiUZR6CeIs8Dd6687D-o48lwZEjb6cPPckg" />
+
+	<!-- External Font Stylesheets -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet" />
+
+	<!-- Stylesheet -->
+	<link rel="stylesheet" href="./scss/style.scss" />
+
+	<!-- Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100426446-3"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+		gtag('config', 'UA-100426446-3');
+	</script>
+</head>
+
+<body>
+	<!-- Include Header Section -->
+	<include src="./src/parts/header.html"></include>
+
+	<main id="site-content" class="site-content py-5">
+		<div class="container">
+			<div class="d-block d-lg-flex justify-content-md-between">
+				<!-- Include Application Section -->
+				<include src="./src/parts/app.html"></include>
+				<!-- Include Receipt Preview Section -->
+				<include src="./src/parts/preview.html"></include>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</main>
+
+	<!-- Include Footer Section -->
+	<include src="./src/parts/footer.html"></include>
+
+	<!-- JavaScript Module -->
+	<script type="module" src="./js/index.js"></script>
+</body>
+
+</html>

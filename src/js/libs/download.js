@@ -1,40 +1,59 @@
-// Dependency for downloading file.
+// Import the 'saveAs' function from the 'file-saver' library
 import { saveAs } from "file-saver";
 
-// Define const.
+// Define a constant object for download-related functions
 const download = {};
 
 /**
- * Convert base64 to Blob.
- * @param {string} uri base64 string.
- * @return {Blob}
+ * Convert a base64 string to a Blob.
+ * @param {string} uri - base64 string.
+ * @return {Blob} - Blob representing the data.
  */
-download.base64ToBlob = ( uri ) => {
-  var byteString = atob( uri.split( "," )[ 1 ] );
-  var mimeString = uri.split( "," )[ 0 ].split( ":" )[ 1 ].split( ";" )[ 0 ];
-  var ab = new ArrayBuffer( byteString.length );
-  var ia = new Uint8Array( ab );
-  for ( var i = 0; i < byteString.length; i++ ) {
-    ia[ i ] = byteString.charCodeAt( i );
-  }
-  var blob = new Blob( [ ab ], { type: mimeString } );
+download.base64ToBlob = (uri) => {
+  // Decode the base64 string
+  const byteString = atob(uri.split(",")[1]);
+
+  // Extract the MIME type from the data URI
+  const mimeString = uri.split(",")[0].split(":")[1].split(";")[0];
+
+  // Create an array buffer and populate it with data using array methods
+  const ab = new ArrayBuffer(byteString.length);
+  const ia = new Uint8Array(ab);
+
+  // Use forEach to populate the Uint8Array
+  byteString.split('').forEach((char, i) => {
+    ia[i] = char.charCodeAt(0);
+  });
+
+  // Create a Blob with the array buffer and specified MIME type
+  const blob = new Blob([ab], { type: mimeString });
+
   return blob;
 };
 
 /**
- * Download base64 image.
- * @param {string} uri base64 string.
+ * Download a base64 image as a file.
+ * @param {string} uri - base64 string.
  */
-download.save = ( uri = null ) => {
-  if ( uri === "" || uri === null || typeof uri === "undefined" ) {
+download.save = (uri = null) => {
+  // Check if the URI is empty or not provided
+  if (uri === "" || uri === null || typeof uri === "undefined") {
     return false;
   }
+
+  // Get the current date and time
   const date = new Date();
-  const blob = download.base64ToBlob( uri );
   const time = date.getTime();
-  const file = `recipt-${time}.png`;
-  saveAs( blob, file );
+
+  // Convert the base64 string to a Blob
+  const blob = download.base64ToBlob(uri);
+
+  // Generate a unique file name based on the timestamp
+  const file = `receipt-${time}.png`;
+
+  // Save the Blob as a file with the generated name
+  saveAs(blob, file);
 };
 
-// Export as default.
+// Export the 'download' object as the default export
 export default download;

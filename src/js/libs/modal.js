@@ -1,22 +1,24 @@
-// Define const.
+// Define an object for managing modals
 const modal = {};
 
-// Define modal re-usable variables.
+// Define a class name for showing the modal
 modal.openClass = "rg-modal-open";
 
 /**
- * Show modal with animation
+ * Show the modal with animation
  */
 modal.open = () => {
-  $( document.body ).addClass( modal.openClass );
+	// Add the 'rg-modal-open' class to the body to show the modal
+	$(document.body).addClass(modal.openClass);
 };
 
 /**
- * Hide modal
+ * Hide the modal
  */
 modal.close = () => {
-  $( document.body ).removeClass( modal.openClass );
+	// Remove the 'rg-modal-open' class from the body to hide the modal
+	$(document.body).removeClass(modal.openClass);
 };
 
-// Export as default;
+// Export the 'modal' object as the default export
 export default modal;

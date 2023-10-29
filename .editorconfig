@@ -1,20 +1,34 @@
-# This file is for unifying the coding style for different editors and IDEs
-# editorconfig.org
+# This file is for unifying the coding style for different editors and IDEs.
+# For more information, visit editorconfig.org.
+
+# WordPress Coding Standards:
+# https://make.wordpress.org/core/handbook/coding-standards/
 
 root = true
 
 [*]
+# Set the character set to UTF-8.
 charset = utf-8
+# Use LF (linefeed) for line endings.
 end_of_line = lf
-indent_size = 4
+# Indentation size is 4 spaces.
+indent_size = 2
+# Use tabs for indentation.
 indent_style = tab
-insert_final_newline = false
+# Insert a final newline at the end of the file.
+insert_final_newline = true
+# Trim trailing whitespace at the end of lines.
 trim_trailing_whitespace = true
 
 [*.txt]
+# Disable trimming trailing whitespace for .txt files.
 trim_trailing_whitespace = false
 
 [*.{md,json,yml}]
+# Disable trimming trailing whitespace and use spaces for indentation for specific file types.
 trim_trailing_whitespace = false
 indent_style = space
-indent_size = 2
+
+[*.json]
+# Use tabs for indentation specifically for .json files.
+indent_style = tab

@@ -1,35 +1,38 @@
-const { getScreenshot } = require( "./chromium" );
-
-const express = require( "express" );
-const cors = require( "cors" );
+const express = require("express");
+const cors = require("cors");
 const app = express();
+const nodeHtmlToImage = require("node-html-to-image");
 
-// use it before all route definitions
-app.use( cors( { origin: true } ) );
+// Middleware to enable CORS and parse request bodies
+app.use(cors({ origin: true }));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
-app.use( express.urlencoded( { extended: false } ) );
-app.use( express.json() );
+// Endpoint for capturing screenshots
+app.post( "*", async (req, res) => {
+	try {
+		const { html } = req.body;
 
-// Handler to take screenshots of a URL.
-app.post( "/*", async ( req, res ) => {
-  try {
-    const html = req.body.html;
-    if ( html === "" || typeof html === "undefined" ) {
-      throw "No Tricks Please!";
-    }
-    const file = await getScreenshot( html );
-    response = res
-      .status( 200 )
-      .send( { success: true, image: "data:image/png;base64," + file } );
-  } catch ( e ) {
-    let message = e.message ?
-      e.message :
-      "Sorry, there was a Server  problem";
-    response = res
-      .status( 400 )
-      .send( { success: false, error: message, e: e } );
-  }
-  return response;
-} );
+		// Check if the request contains HTML content
+		if (!html) {
+			throw new Error("HTML content is missing.");
+		}
+
+		// Generate a screenshot using the getScreenshot function
+		const image = await nodeHtmlToImage({
+			html: html,
+			type: "png"
+		});
+
+		// Send the screenshot as a base64-encoded image
+		res.status(200).json({
+			success: true,
+			image: `data:image/png;base64,${image.toString("base64")}`,
+		});
+	} catch (error) {
+		const message = error.error || "Server encountered an error.";
+		res.status(200).json({ success: false, error: message });
+	}
+});
 
 module.exports = app;

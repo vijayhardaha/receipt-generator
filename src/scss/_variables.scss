@@ -1,0 +1,77 @@
+//## Fonts variable.
+$font-family-sans-serif: "Poppins", "Helvetica", "sans-serif";
+$font-size-base: 0.813rem;
+$font-weight-lighter: 100;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-bolder: 800;
+
+$headings-font-weight: 600;
+
+$link-decoration: none;
+$link-hover-decoration: underline;
+
+// Bootstrap base colors
+$white: #fff;
+$gray-50: #f8fafc;
+$gray-100: #f8f6f2;
+$gray-200: #f6f1e9;
+$gray-300: #dad3c3;
+$gray-400: #b5b0a1;
+$gray-500: #968e7e;
+$gray-600: #8e887a;
+$gray-700: #716d66;
+$gray-800: #403d38;
+$gray-900: #211f1c;
+
+// Theme colors
+// Primary
+$primary: #4fc9da;
+$success: #b8d935;
+$info: #4f55da;
+$danger: #f06445;
+$warning: #e8c444;
+$light: #dad3c3;
+
+// Border radiues
+$border-radius: 0.95rem;
+$border-radius-sm: $border-radius * 0.5;
+$border-radius-lg: $border-radius * 1.5;
+
+// Body
+$body-bg: $white;
+
+// Border
+$border-dashed-color: #eaeaea;
+$border-color: #eaeaea;
+
+// Card
+$card-border-color: 300, #e8e5dd;
+$card-box-shadow: none;
+$card-border-enabled: true;
+$card-border-style: dashed;
+$card-border-radius: $border-radius;
+$card-bg: rgba(#f8f6f2, 0.3);
+
+// Accordion
+$accordion-border-radius: $border-radius;
+
+// Button
+$btn-border-radius-sm: $border-radius;
+
+// Accordion
+$accordion-border-radius: $card-border-radius;
+
+// Modals
+$modal-content-border-radius: $card-border-radius;
+
+// Forms
+$input-border-color: #efe9e1;
+
+// Badge
+$badge-border-radius: $border-radius-sm;
+
+// Form
+$input-placeholder-color: $gray-400;

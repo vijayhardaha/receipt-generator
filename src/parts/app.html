@@ -1,0 +1,106 @@
+<form action="/" method="POST" id="receipt-form" class="receipt-form" autocomplete="off" novalidate>
+	<div class="spinner">
+		<!-- Loading Spinner -->
+		<div class="spinner-grow text-primary" role="status">
+			<span class="visually-hidden">Loading...</span>
+		</div>
+	</div>
+	<div class="card shadow-sm">
+		<div class="card-header d-flex align-items-center justify-content-between py-3">
+			<!-- Form Header -->
+			<h5 class="mb-0 fw-normal">Fill Details</h5>
+			<a href="#" id="view-sample" class="d-lg-none">View Sample</a>
+		</div>
+		<div class="card-body">
+			<!-- Date & Time Input -->
+			<div class="mb-3">
+				<label for="date" class="form-label">Date & Time <span class="text-danger">*</span></label>
+				<input type="text" id="date" name="date" class="form-control" required />
+			</div>
+			<!-- Business Input -->
+			<div class="mb-3">
+				<label for="business" class="form-label">Business <span class="text-danger">*</span></label>
+				<input type="text" id="business" name="business" class="form-control" value="Blue Stone Mall" required />
+			</div>
+			<!-- Address Input -->
+			<div class="mb-3">
+				<label for="address" class="form-label">Address <span class="text-danger">*</span></label>
+				<textarea id="address" name="address" class="form-control" rows="4" required>9 W. Lees Creek Road
+Saint Charles, IL, 60174</textarea>
+			</div>
+			<div class="d-flex align-items-center justify-content-between">
+				<!-- Tax Type Select -->
+				<div class="mb-3">
+					<label for="tax-type" class="form-label">Tax Type</label>
+					<select id="tax-type" name="tax_type" class="form-select">
+						<option value="TAX">Tax</option>
+						<option value="VAT">Vat</option>
+						<option value="SALES TAX">Sales Tax</option>
+						<option value="SERVICE">Service</option>
+					</select>
+				</div>
+				<!-- Tip/VAT Input -->
+				<div class="mb-3 ms-3 flex-grow-1">
+					<label for="tax" class="form-label">Tip/Vat</label>
+					<input type="text" id="tax" name="tax" class="form-control price-input input-mask" />
+				</div>
+			</div>
+			<div class="d-flex align-items-center justify-content-between">
+				<!-- Currency Select -->
+				<div class="mb-3">
+					<label for="currency" class="form-label">Currency</label>
+					<select id="currency" name="currency" class="form-select">
+						<option value="$">USD ($)</option>
+						<option value="£">GBP (£)</option>
+						<option value="€">EUR (€)</option>
+						<option value="Rs">INR (Rs)</option>
+					</select>
+				</div>
+				<!-- Payment Type Input -->
+				<div class="mb-3 ms-3 flex-grow-1">
+					<label for="payment-type" class="form-label">Payment Type <span class="text-danger">*</span></label>
+					<input type="text" id="payment-type" name="payment_type" class="form-control" value="Cash" required />
+				</div>
+			</div>
+			<!-- Items Table -->
+			<table class="items-table">
+				<thead>
+					<tr>
+						<th>Item</th>
+						<th>Qty</th>
+						<th>Cost</th>
+						<th class="item-remove">&nbsp;</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<!-- Item Name Input -->
+						<td><input type="text" class="form-control item-name-input input-mask" name="item_name[]"
+								placeholder="Item Name*" value="Books" required /></td>
+						<!-- Quantity Input -->
+						<td><input type="text" class="form-control qty-input input-mask" name="qty[]" placeholder="QTY*" value="2"
+								required /></td>
+						<!-- Price Input -->
+						<td><input type="text" class="form-control price-input input-mask" name="price[]" placeholder="Price*"
+								value="10.00" required /></td>
+						<td class="item-remove">
+							<!-- Remove Item Button -->
+							<a href="#" class="btn btn-secondary disabled">&times;</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="d-flex">
+				<!-- Add New Item Button -->
+				<a href="#" class="add-new-item-row btn btn-light">Add New Item</a>
+			</div>
+			<!-- Error Alert -->
+			<div class="alert alert-danger mt-3 mb-0 d-none py-2"></div>
+		</div>
+		<div class="card-footer d-grid py-3">
+			<!-- Hidden Action Field and Generate Receipt Button -->
+			<input type="hidden" name="action" value="make_receipt" />
+			<button type="submit" class="btn btn-success btn-lg">Generate Receipt</button>
+		</div>
+	</div>
+</form>

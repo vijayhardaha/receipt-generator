@@ -1,25 +1,35 @@
 # Receipt Generator
 
-An easy to use online tool to generate receipts.
+A straightforward online tool for generating receipts, whether for personal or business use.
+
+## Dev Usage
+
+To get started with the Receipt Generator, follow these steps:
+
+1. Clone the repository:
+
+   ```
+   git clone https://github.com/vijayhardaha/receipt-generator.git
+   ```
+
+2. Install dependencies:
+
+   ```
+   npm install
+   ```
+
+3. Use the provided npm scripts:
+
+   - **npm run server**: Start the development server.
+
+   - **npm run dev**: Run the development server on port 3001.
+
+   - **npm run build**: Build the project for production.
+
+## License
+
+This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
 
 ## Author
 
-**Vijay Hardaha** [(Full stack web developer)](https://pph.me/vijayhardaha)
-
-- Twitter: [https://twitter.com/vijayhardaha](https://twitter.com/vijayhardaha)
-- Linkedin: [https://www.linkedin.com/in/vijayhardaha](https://www.linkedin.com/in/vijayhardaha/)
-- Facebook: [https://www.facebook.com/geekyvijay](https://www.facebook.com/geekyvijay)
-- Dev.to: [https://dev.to/vijayhardaha](https://dev.to/vijayhardaha)
-
-
-## Show your support
-
-Please⭐️this repository and follow me on [Twitter](https://twitter/vijayhardaha/) if this project helped you!
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update the tests as appropriate.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+- **Vijay Hardaha** - [Full Stack Web Developer](https://pph.me/vijayhardaha)

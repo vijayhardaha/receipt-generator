@@ -1,25 +1,11 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "dist/**", "use": "@vercel/static" },
-    {
-      "src": "/api/index.js",
-      "use": "@vercel/node",
-      "config": { "maxLambdaSize": "40mb" }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*).(js.map|js|css|html|png|json|jpg|jpeg|ico|webmanifest)",
-      "dest": "/dist/$1.$2",
-      "headers": {
-        "cache-control": "public,max-age=31536000,immutable"
-      }
-    },
-    {
-      "src": "/",
-      "dest": "/dist/index.html"
-    },
-    { "src": "/api/", "methods": ["POST"], "dest": "/api/index.js" }
-  ]
+	"version": 2,
+	"builds": [
+		{ "src": "public/**", "use": "@vercel/parcel" },
+		{ "src": "api/**", "use": "@vercel/node" }
+	],
+	"routes": [
+		{ "handle": "filesystem" },
+		{ "src": "/api/get-image", "dest": "/api/index.js" }
+	]
 }
