@@ -36,6 +36,7 @@ yarn-error.log
 # Built packages.
 build/
 coverage/
+dist/
 
 # Project files.
 node_modules/

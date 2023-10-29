@@ -5,7 +5,7 @@
 	"scripts": {
 		"server": "NODE_ENV=development node server.js",
 		"dev": "parcel src/index.html --port 3001",
-		"build": "parcel build src/index.html --no-source-maps --public-url https://receipt-generator.vercel.app"
+		"build": "parcel build src/index.html --no-source-maps"
 	},
 	"repository": {
 		"type": "git",

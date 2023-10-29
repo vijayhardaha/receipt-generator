@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // Endpoint for capturing screenshots
-app.post( "*", async (req, res) => {
+app.post( "/api", async (req, res) => {
 	try {
 		const { html } = req.body;
 
@@ -30,7 +30,7 @@ app.post( "*", async (req, res) => {
 			image: `data:image/png;base64,${image.toString("base64")}`,
 		});
 	} catch (error) {
-		const message = error.error || "Server encountered an error.";
+		const message = error.message || "Server encountered an error.";
 		res.status(200).json({ success: false, error: message, errorData: error });
 	}
 });
