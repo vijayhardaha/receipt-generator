@@ -1,0 +1,18 @@
+{
+	"version": 2,
+	"builds": [
+		{ "src": "dist/**", "use": "@vercel/static" },
+		{ "src": "/api/index.js", "use": "@vercel/node" }
+	],
+	"routes": [
+		{
+			"src": "/(.*).(js.map|js|css|html|png|json|jpg|jpeg|ico)",
+			"dest": "/dist/$1.$2",
+			"headers": {
+				"cache-control": "public,max-age=31536000,immutable"
+			}
+		},
+		{ "src": "/", "dest": "/dist/index.html" },
+		{ "src": "/api/", "methods": ["POST"], "dest": "/api/index.js" }
+	]
+}
